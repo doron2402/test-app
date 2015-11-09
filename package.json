@@ -1,0 +1,21 @@
+{
+  "name": "app-test",
+  "version": "1.0.0",
+  "description": "test app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "express"
+  ],
+  "author": "OpenTable",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.3.4",
+    "express": "^4.13.3",
+    "joi": "^7.0.0",
+    "lodash": "^3.10.1"
+  }
+}
