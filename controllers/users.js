@@ -1,4 +1,6 @@
 var lodash = require('lodash');
+var Promise = require("bluebird");
+
 // Dummy users
 var users = [
   { id : 1, name: 'tobi', email: 'tobi@learnboost.com' },
@@ -9,16 +11,25 @@ var users = [
 var usersController = {};
 
 usersController.showAll = function(req, res){
-  return res.render('users', {
-    users: users,
-    title: "EJS example",
-    header: "Some users"
-  });
+  return res.json({code: 'ok', users: users});
 };
 
 usersController.getById = function(req, res) {
   var user = users[req.params.id-1];
   return res.json({code: 'ok', user: user});
+};
+
+usersController.addUser = function(req, res){
+  users.push(usersController.parseRequestToUser(req));
+  return res.json({code: 'ok', users: users});
+};
+
+usersController.parseRequestToUser = function(req){
+   return {
+    id: users.length+1,
+    name: req.body && req.body.name ?  req.body.name : 'no name',
+    email: req.body && req.body.email ? req.body.email : 'no@email.com'
+  };
 };
 
 module.exports = usersController;
