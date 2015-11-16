@@ -9,11 +9,7 @@ var users = [
 var usersController = {};
 
 usersController.showAll = function(req, res){
-  return res.render('users', {
-    users: users,
-    title: "EJS example",
-    header: "Some users"
-  });
+  return res.json({users: users});
 };
 
 usersController.getById = function(req, res) {
