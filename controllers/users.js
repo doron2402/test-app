@@ -3,9 +3,9 @@ var Promise = require("bluebird");
 
 // Dummy users
 var users = [
-  { id : 1, name: 'tobi', email: 'tobi@learnboost.com' },
-  { id : 2, name: 'loki', email: 'loki@learnboost.com' },
-  { id : 3, name: 'jane', email: 'jane@learnboost.com' }
+  { name: 'tobi', email: 'tobi@learnboost.com' },
+  { name: 'loki', email: 'loki@learnboost.com' },
+  { name: 'jane', email: 'jane@learnboost.com' }
 ];
 
 var usersController = {};
@@ -24,9 +24,13 @@ usersController.addUser = function(req, res){
   return res.json({code: 'ok', users: users});
 };
 
+usersController.editUser = function(req, res){
+  users[req.params.id] = req.body;
+  return res.json({code: 'ok', users: users});
+};
+
 usersController.parseRequestToUser = function(req){
    return {
-    id: users.length+1,
     name: req.body && req.body.name ?  req.body.name : 'no name',
     email: req.body && req.body.email ? req.body.email : 'no@email.com'
   };
