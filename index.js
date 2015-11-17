@@ -12,7 +12,8 @@ app.set('view engine', 'html');
 app
   .use('/', routes.base)
   .use('/users', routes.users)
-  .use(mw.errorHandler);
+  .use(mw.errorHandler)
+  .use('/public', express.static(__dirname + '/public'));
 
 app.listen(settings.server.port, function(err){
   if (err){
