@@ -27,8 +27,8 @@ usersController.addUser = function(req, res){
 usersController.parseRequestToUser = function(req){
    return {
     id: users.length+1,
-    name: req.body && req.body.name ?  req.body.name : 'no name',
-    email: req.body && req.body.email ? req.body.email : 'no@email.com'
+    name: _.get(req, 'body.name', 'no name'),
+    email: _.get(req, 'body.email', 'no@email.com')
   };
 };
 
