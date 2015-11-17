@@ -9,3 +9,8 @@
     - update user [POST] /users/:id/update
 
 
+## Running
+
+- clone repo
+- `cd` into directory and `npm i && npm start`
+- point browser to: `localhost:5000/public` (todo: better routes)
