@@ -19,6 +19,20 @@ angular.module('inventory', [])
       controllerAs: 'usersCtrl'
     };
   })
+  .directive('topNav', function(){
+    return {
+      scope: {},
+      templateUrl: '/public/templates/nav.html',
+      controller: 'Nav',
+      controllerAs: 'navCtrl'
+    };
+  })
+  .controller('Nav', function() {
+    this.navs = [
+      { title: 'home', url: '#/home' },
+      { title: 'about', url: '#/about' }
+    ];
+  })
   .controller('UserForm', function() {
     this.user = {};
     this.addUser = function() {
