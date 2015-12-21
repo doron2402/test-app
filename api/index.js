@@ -6,6 +6,7 @@ var mw = require('./mw');
 
 app
   .use('/', routes.base)
+  .use('/api/settings', routes.settings)
   .use('/users', routes.users)
   .use(mw.errorHandler)
 

@@ -1,4 +1,5 @@
 module.exports = {
   users: require('./users'),
-  base: require('./base')
+  base: require('./base'),
+  settings: require('./settings')
 };
