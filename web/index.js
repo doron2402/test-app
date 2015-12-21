@@ -8,7 +8,8 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'html');
 
 app
-  .use('/public', express.static(__dirname + '/public'));
+.use('/', express.static(__dirname + '/public'))
+.use('/public', express.static(__dirname + '/public'));
 
 app.listen(settings.server.port, function(err){
   if (err){
