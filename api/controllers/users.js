@@ -5,7 +5,7 @@ var Promise = require("bluebird");
 var users = [
   { name: {first: 'Doron', last: 'Segal'}, email: 'tobi@learnboost.com', age: 30 },
   { name: {first: 'Vin', last: 'Halbwachs'}, email: 'loki@learnboost.com', age: 28 },
-  { name: {first: 'Tony', last: 'Odubela'}, email: 'jane@learnboost.com', age: 37 }
+  { name: {first: 'Tony', last: 'Odubela'}, email: 'jane@learnboost.com', age: 37 },
   { name: {first: 'Simon', last: 'Attley'}, email: 'jane@learnboost.com', age: 50 }
 ];
 
